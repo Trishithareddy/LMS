@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/superteacher.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ SEO Meta Tags -->
+  <title>Open-CS | SuperTeacher Platform</title>
+  <meta name="description" content="Open-CS is a secure login platform for students, teachers, and admins. Access SuperTeacher's educational tools with ease." />
+
+  <!-- ✅ Open Graph (optional but helps on social media or search previews) -->
+  <meta property="og:title" content="Open-CS | SuperTeacher Platform" />
+  <meta property="og:description" content="Login to manage students, teachers, and classes on the SuperTeacher platform." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://opencs.in" />
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <!-- Pyodide setup for Python execution -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+    <script>
+      window.languagePluginLoader = window.loadPyodide({
+        indexURL: "https://cdn.jsdelivr.net/pyodide/v0.25.1/full/"
+      });
+    </script>
+  </body>
+</html>
+ 

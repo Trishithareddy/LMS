@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title><%= quiz.title || "Quiz" %> — Report</title>
+  <style>
+    @page { margin: 20mm; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+    .container { padding: 8px 0; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .school {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .meta {
+      text-align: right;
+      font-size: 11px;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      page-break-inside: auto;
+    }
+    thead { display: table-header-group; }
+    tfoot { display: table-footer-group; }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 6px 8px;
+      text-align: left;
+      font-size: 11px;
+    }
+    th {
+      background: #f5f5f5;
+      font-weight: 700;
+    }
+    tr {
+      page-break-inside: avoid;
+      page-break-after: auto;
+    }
+    .small { font-size: 10px; color: #444; }
+    .right { text-align: right; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <!-- <div class="school">
+          <%= (typeof schoolName !== "undefined" && schoolName) ? schoolName : "Quiz Result" %>
+        </div> -->
+        <div><strong>Quiz:</strong> <%= quiz.title || "Untitled Quiz" %></div>
+        <!-- <div class="small">Quiz ID: <%= quiz._id %></div> -->
+      </div>
+      <div class="meta">
+        <div>Generated: <%= generatedAt %></div>
+        <!-- <div>Range: <%= typeof rangeText !== "undefined" ? rangeText : "All attempts" %></div> -->
+        <div>Records: <%= attempts && attempts.length ? attempts.length : 0 %></div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Class</th>
+          <th class="right">Score</th>
+          <th class="right">Persentage %</th>
+          <th>Status</th>
+          <th class="right">Duration (min)</th>
+          <th>Submitted At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (attempts && attempts.length) { %>
+          <% attempts.forEach(function(a, idx) { %>
+            <tr>
+              <td><%= idx + 1 %></td>
+
+              <!-- student name & class (from populated studentId) -->
+              <td>
+                <%= (a.studentId && a.studentId.name) ? a.studentId.name : "N/A" %>
+              </td>
+              <td>
+                <%= (a.studentId && a.studentId.class) ? a.studentId.class : "" %>
+              </td>
+
+              <!-- score -->
+              <td class="right">
+                <%= (typeof a.score === "number") ? a.score : "" %>
+              </td>
+
+              <!-- percentage from schema -->
+              <td class="right">
+                <%= (typeof a.percentage === "number") ? a.percentage.toFixed(2) : "" %>
+              </td>
+
+              <!-- pass/fail from isPassed -->
+              <td>
+                <%= a.isPassed ? "Pass" : "Fail" %>
+              </td>
+
+              <!-- duration (seconds -> minutes, optional) -->
+              <td class="right">
+                <%= (typeof a.duration === "number" && a.duration > 0)
+                      ? (a.duration / 60).toFixed(1)
+                      : "" %>
+              </td>
+
+              <!-- submitted at -->
+              <td>
+                <%= a.submittedAt
+                      ? new Date(a.submittedAt).toLocaleString()
+                      : "" %>
+              </td>
+            </tr>
+          <% }); %>
+        <% } else { %>
+          <tr>
+            <td colspan="8" class="small">No attempts found for this quiz.</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

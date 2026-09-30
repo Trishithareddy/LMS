@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"studentId":{"$numberInt":"1"},"videoId":{"$numberInt":"1"},"chapterId":{"$numberInt":"1"}},"name":"studentId_1_videoId_1_chapterId_1","background":true}],"uuid":"7b149ee63e8142a3be1ce186a2ad1688","collectionName":"videoprogresses","type":"collection"}

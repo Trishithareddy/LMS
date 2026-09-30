@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ejnxfmru/public_html/
+    - /bin/cp * $DEPLOYPATH

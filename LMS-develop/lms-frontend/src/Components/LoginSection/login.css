@@ -1,0 +1,110 @@
+:root {
+    --background: #ffffff;
+    --foreground: #2a4736;
+
+    --card: #ffffff;
+    --card-foreground: #2a4736;
+
+    --popover: #ffffff;
+    --popover-foreground: #2a4736;
+
+    --primary: #1baa63;
+    --primary-foreground: #ffffff;
+
+    --secondary: #f5fdf2;
+    --secondary-foreground: #2a4736;
+
+    --muted: #f7fbf3;
+    --muted-foreground: #6a7d72;
+
+    --accent: #ffbd33;
+    --accent-foreground: #2a4736;
+
+    --destructive: #cc3333;
+    --destructive-foreground: #ffffff;
+
+    --border: #e4f0df;
+    --input: #e4f0df;
+    --ring: #1baa63;
+
+    --radius: 0.75rem;
+
+    /* Custom LMS Colors */
+    --hero-gradient-start: #357a35;
+    --hero-gradient-end: #63a53b;
+    --glow-yellow: #ffbd33;
+    --glow-green: #1ac26a;
+    --brand-red: #cc3333;
+    --brand-blue: #1ab6ff;
+
+    --sidebar-background: #fafafa;
+    --sidebar-foreground: #3d3e41;
+    --sidebar-primary: #191a1c;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #f5f5f7;
+    --sidebar-accent-foreground: #191a1c;
+    --sidebar-border: #e3eaf5;
+    --sidebar-ring: #2f8cff;
+}
+.bg-shadow{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.bg-background{
+    background-color :#ffffff;
+}
+.text-accent{
+    color :#ffbd33
+}
+.text-foreground{
+    color :#2a4736;
+}
+.text-muted-foreground{
+    color :#6a7d72;
+}
+.hero-gradient {
+     background-image: linear-gradient(to top, #006400 0%, #228b22 1%, #4cbb17 100%);
+}
+.bg-card{
+    background-color: #ffffff;
+}
+.border-border{
+    border-color: #e4f0df;
+}
+.border-primary{
+    border-color: #1baa63;
+}
+.ring-primary{
+    box-shadow: 0 0 0 2px #1baa63;
+}
+.text-primary{
+    color :#1baa63;
+}
+
+.text-primary-foreground{
+    color :#ffffff;
+}
+
+.text-gradient {
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glow-yellow {
+    box-shadow: 0 0 40px hsl(var(--glow-yellow) / 0.4);
+}
+
+.glow-green {
+    box-shadow: 0 0 40px hsl(var(--glow-green) / 0.3);
+}
+
+/* @layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+} */

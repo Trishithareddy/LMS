@@ -1,0 +1,112 @@
+/* Overlay covers the whole screen */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup styles */
+.popup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Width is 80% of the screen */
+    max-width: 600px; /* Maximum width */
+    height: auto; /* Adjust height as per content */
+    max-height: 80vh; /* Maximum height is 80% of the viewport height */
+    overflow-y: auto; /* Enable scroll if content exceeds max height */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center; /* Center text */
+}
+
+.popup h2,
+.popup p {
+    color: black; /* Ensures specific elements inside .popup also have black text */
+}
+
+.tableContainer {
+    max-height: 300px; /* Maximum height for the scrollable area */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 20px 0; /* Space around the table */
+}
+
+.selectTable {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+.selectTable th,
+.selectTable td {
+    padding: 10px; /* Padding inside cells */
+    border: 1px solid #ddd; /* Border for the cells */
+    text-align: center; /* Center text */
+    color: black;
+}
+
+/* Section styling */
+.sectionRow {
+    background-color: #f0f0f0; /* Light gray background for section headers */
+    text-align: left;
+    padding-left: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.image {
+    width: 50px; /* Adjust image size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Button styles */
+.closeButton {
+    background: #007bff; /* Primary button color */
+    color: white; /* Text color for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for the button */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px; /* Space above the button */
+}
+
+.closeButton:hover {
+    background: #0056b3; /* Darker color on hover */
+}
+
+.saveButton {
+    background: #28a745; /* Green color for the save button */
+    color: white; /* Text color for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for the button */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px; /* Space above the button */
+    margin-right: 10px; /* Space to the right of the button */
+    transition: background-color 0.2s ease; /* Smooth transition effect */
+}
+
+.saveButton:hover {
+    background: #218838; /* Darker green on hover */
+}
+
+/* Image size adjustments */
+.image {
+    width: 120px; /* Set the desired width */
+    height: auto; /* Maintain the aspect ratio */
+    /* Or you can set a fixed height if you prefer */
+    /* height: 100px; */
+}
+
+/* Responsive media query for smaller screens */
+@media (max-width: 600px) {
+    .popup {
+        width: 80%; /* Take more space on smaller screens */
+        padding: 15px; /* Reduce padding */
+    }
+}
